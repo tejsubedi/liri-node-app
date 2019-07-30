@@ -12,51 +12,50 @@ var spotify = new Spotify(keys.spotify);
 
 switch (command) {
   case "concert-this":
-      var artist = param;
-      //If user's choice is to concert a song, call the function concertThis()
-      concertThis(artist);
+    var artist = param;
+    //If user's choice is to concert a song, call the function concertThis()
+    concertThis(artist);
+    break;
 
-      break;
   case "spotify-this-song":
-      //If user's choice is to get a song details from Spotify API, call the function spotifyThisSong()
-      spotifyThisSong(param);
+    //If user's choice is to get a song details from Spotify API, call the function spotifyThisSong()
+    spotifyThisSong(param);
+    break;
 
-
-      break;
   case "movie-this":
-      //If user do not provide a command, this is the default, display the details of Mr.Nobody movie by calling getMovieDetails function
-      if (param == "") {
-          param = "Mr.Nobody";
-          getMovieDetails(param);
-      } else {
+    //If user do not provide a command, this is the default, display the details of Mr.Nobody movie by calling getMovieDetails function
+    if (param == "") {
+      param = "Mr.Nobody";
+      getMovieDetails(param);
+    } else {
 
-          getMovieDetails(param);
-      }
-
-      break;
+      getMovieDetails(param);
+    }
+    break;
+    
   case "do-what-it-says":
-      //if the choice is do-what-it-says, read the command from a text file and execute
-      console.log("Entered do-what-it-says function");
-      fs.readFile("random.txt", "utf8", function (error, data) {
-          if (error) {
-              return console.log(error);
-          }
-          //get the string from text file and split by comma
-          var dataArr = data.split(",");
-          //store the split elements in an array called dataArr1
-          var dataArr1 = dataArr[1].slice();
-          console.log(dataArr1);
-          //If the first value of dataArr is movie-this, call the function getMovieDetails and pass the dataArr1 as arguement
-          if (dataArr[0] == "movie-this")
-              getMovieDetails(dataArr1);
-          //If the first value of dataArr is concert-this, call the function concertThis and pass the dataArr1 as arguement
-          if (dataArr[0] == "concert-this")
-              concertThis(dataArr1);
-          //If the first value of dataArr is spotify-this-song, call the function spotifyThisSong and pass the dataArr1 as arguement
-          if (dataArr[0] == "spotify-this-song")
-              spotifyThisSong(dataArr1);
-      });
-      break;
+    //if the choice is do-what-it-says, read the command from a text file and execute
+    console.log("Entered do-what-it-says function");
+    fs.readFile("random.txt", "utf8", function (error, data) {
+      if (error) {
+        return console.log(error);
+      }
+      //get the string from text file and split by comma
+      var dataArr = data.split(",");
+      //store the split elements in an array called dataArr1
+      var dataArr1 = dataArr[1].slice();
+      console.log(dataArr1);
+      //If the first value of dataArr is movie-this, call the function getMovieDetails and pass the dataArr1 as arguement
+      if (dataArr[0] == "movie-this")
+        getMovieDetails(dataArr1);
+      //If the first value of dataArr is concert-this, call the function concertThis and pass the dataArr1 as arguement
+      if (dataArr[0] == "concert-this")
+        concertThis(dataArr1);
+      //If the first value of dataArr is spotify-this-song, call the function spotifyThisSong and pass the dataArr1 as arguement
+      if (dataArr[0] == "spotify-this-song")
+        spotifyThisSong(dataArr1);
+    });
+    break;
 
 }
 
