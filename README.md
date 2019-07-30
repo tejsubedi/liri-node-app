@@ -18,8 +18,14 @@ This project is about mimic of Siri which takes a command line node app that tak
 
 * `movie-this`
 
- * `do-what-it-says`
+* `do-what-it-says`
 
-##What each command should do 
-**`node liri.js concert-this <artist/band name here>`**
+## What each command should do 
+* `node liri.js concert-this <artist/band name here>` will genereate 
+* Name of the venue
+
+* Venue location
+
+* Date of the Event (use moment to format this as "MM/DD/YYYY")
+
 
