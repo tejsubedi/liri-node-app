@@ -30,6 +30,9 @@ This project is about mimic of Siri which takes a command line node app that tak
 
 * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
+#Image
+![](images/concert-this.png)
+
 
 **2.`node liri.js spotify-this-song '<song name here>'` will genereate in terminal**
 
@@ -68,3 +71,16 @@ This project is about mimic of Siri which takes a command line node app that tak
 * Liri will take the text inside of random.txt.
 
 * Liri will call one of the Liri's command. 
+
+# Challenges Faced
+
+ - Find the right api conncetion to facilitate the data search as users choices 
+
+# Technology Used
+ **JavaScript, Node, Moment.js, NPM: axios, dot.env and API**
+
+# Future Enhancements
+ - Add some more API and make it more user friendly
+
+# Deployment
+ - This game is deployed to Github: Tej Subedi
