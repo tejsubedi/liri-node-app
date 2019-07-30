@@ -46,6 +46,9 @@ This project is about mimic of Siri which takes a command line node app that tak
 
 * If no song is provided it will default to "The Sign" by Ace of Base.
 
+#Image
+![](images/spotify-this.png)
+
 **3.`node liri.js movie-this '<movie name here>'` will genereate in terminal**
 
 * Title of the movie.
@@ -66,12 +69,20 @@ This project is about mimic of Siri which takes a command line node app that tak
 
 * If no user input will output data for the movie Mr.Nobody.
 
+#Image
+![](images/movie-this.png)
+
 **4.`node liri.js do-what-it-says` will genereate in terminal**
 
 * Liri will take the text inside of random.txt.
 
 * Liri will call one of the Liri's command. 
 
+#Image
+![](images/do-what-it-says.png)
+
+#Log.txt
+![](images/log.png)
 # Challenges Faced
 
  - Find the right api conncetion to facilitate the data search as users choices 
