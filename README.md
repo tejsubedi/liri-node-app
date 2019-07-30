@@ -21,16 +21,17 @@ This project is about mimic of Siri which takes a command line node app that tak
 * `do-what-it-says`
 
 ## What each command should do 
-**1.**
-* `node liri.js concert-this <artist/band name here>` will genereate in terminal
+
+**1.`node liri.js concert-this <artist/band name here>` will genereate in terminal**
+
 * Name of the venue
 
 * Venue location
 
 * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-**2.**
-* `node liri.js spotify-this-song '<song name here>'` will genereate in terminal
+
+**2.`node liri.js spotify-this-song '<song name here>'` will genereate in terminal**
 * Artist(s)
 
 * The song's name
