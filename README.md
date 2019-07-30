@@ -32,6 +32,7 @@ This project is about mimic of Siri which takes a command line node app that tak
 
 
 **2.`node liri.js spotify-this-song '<song name here>'` will genereate in terminal**
+
 * Artist(s)
 
 * The song's name
@@ -42,3 +43,28 @@ This project is about mimic of Siri which takes a command line node app that tak
 
 * If no song is provided it will default to "The Sign" by Ace of Base.
 
+**3.`node liri.js movie-this '<movie name here>'` will genereate in terminal**
+
+* Title of the movie.
+
+* Year the movie came out.
+
+* IMDB Rating of the movie.
+
+* Rotten Tomatoes Rating of the movie.
+
+* Country where the movie was produced.
+
+* Language of the movie.
+
+* Plot of the movie.
+
+* Actors in the movie.
+
+* If no user input will output data for the movie Mr.Nobody.
+
+**4.`node liri.js do-what-it-says` will genereate in terminal**
+
+* Liri will take the text inside of random.txt.
+
+* Liri will call one of the Liri's command. 

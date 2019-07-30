@@ -35,7 +35,7 @@ switch (command) {
     
   case "do-what-it-says":
     //if the choice is do-what-it-says, read the command from a text file and execute
-    console.log("Entered do-what-it-says function");
+    
     fs.readFile("random.txt", "utf8", function (error, data) {
       if (error) {
         return console.log(error);
@@ -89,7 +89,7 @@ function concertThis(artist) {
     .then(function (response) {
 
       var result = response.data;
-
+      
       for (var i = 0; i < result.length; i++) {
         var dateTime = result[i]["datetime"];
         var concertDate = moment(dateTime).format("L");
@@ -97,35 +97,19 @@ function concertThis(artist) {
         var nameOfVenu = venuDetails["name"];
         var country = venuDetails["country"];
         var location = venuDetails["city"];
-        console.log("Venu Details:" + " " + nameOfVenu + " " + location + " " + country + " " + "on" + " " + concertDate);
-        logText(result);
+        
       }
+      console.log("Venu Details: " + nameOfVenu );
+      console.log("Venu Country: " + country); 
+      console.log("Venue City: " + location); 
+      console.log("Concert Date: " +  concertDate);
+      logText(result);
 
     });
 
 };
 
-//Function to log all the results of the commands in a text file
-function logText(result) {
-  var logText = "\n" + text + " " + "\n";
-  var objectText = JSON.stringify(result);
-  var finalText = logText + "\n" + objectText;
-  //appendFile to append the contents and avoid overwriting
-  fs.appendFile("log.txt", finalText, function (err) {
 
-    // If an error was experienced we will log it.
-    if (err) {
-      console.log(err);
-    }
-
-    // If no error is experienced, we'll log the phrase "Content Added" to our node console.
-    else {
-
-      console.log("Content Added!");
-    }
-
-  });
-}
 
 //Function to display the details of a song from spotify API base don the song name
 function spotifyThisSong(param) {
@@ -154,4 +138,26 @@ function spotifyThisSong(param) {
     });
 
 
+}
+
+//Function to log all the results of the commands in a text file
+function logText(result) {
+  var logText = "\n" + text + " " + "\n";
+  var objectText = JSON.stringify(result);
+  var finalText = logText + "\n" + objectText;
+  //appendFile to append the contents and avoid overwriting
+  fs.appendFile("log.txt", finalText, function (err) {
+
+    // If an error was experienced we will log it.
+    if (err) {
+      console.log(err);
+    }
+
+    // If no error is experienced, we'll log the phrase "Content Added" to our node console.
+    else {
+
+      console.log("Content Added!");
+    }
+
+  });
 }
