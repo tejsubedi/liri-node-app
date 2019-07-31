@@ -4,7 +4,7 @@ var axios = require("axios");
 var moment = require("moment");
 var fs = require("fs");
 var command = process.argv[2];
-var param = process.argv.slice(3).join();
+var param = process.argv.slice(3).join(" ");
 var text = command + " " + param + "\n";
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
@@ -12,9 +12,9 @@ var spotify = new Spotify(keys.spotify);
 
 switch (command) {
   case "concert-this":
-    var artist = param;
+    // var artist = param;
     //If user's choice is to concert a song, call the function concertThis()
-    concertThis(artist);
+    concertThis(param);
     break;
 
   case "spotify-this-song":
@@ -83,6 +83,8 @@ function getMovieDetails(movieName) {
 }
 
 function concertThis(artist) {
+console.log("Param: ",param);
+
   var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
   axios.get(queryURL)
